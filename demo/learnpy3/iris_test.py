@@ -28,6 +28,7 @@
 #   往往能一通百通，一个模型反复折腾能用到各种方法和体会！
 ###########################
 
+
 ###########################
 # （1）观察原始数据（样本）
 # 知识点：数据导入；数据可视化
@@ -186,16 +187,15 @@ from sklearn.naive_bayes import GaussianNB
 
 classifier = cf = GaussianNB()
 cf.fit(data, t)  # training on the iris dataset
-print(cf.predict(data[0]))  # 训练完分类1条数据
+# print(cf.predict(data[0]))  # 训练完分类1条数据
 # output:[ 1.]
-print(t[0])
+# print(t[0])
 # output:1.0
 
 # 从原始数据data中划分为训练集和验证集，t也做同样划分
 from sklearn import cross_validation
 
-train, test, t_train, t_test = cross_validation.train_test_split(data, t, \
-                                                                 test_size=0.4, random_state=0)
+train, test, t_train, t_test = cross_validation.train_test_split(data, t, test_size=0.4, random_state=0)
 
 print(train.shape)
 # output:(90, 4)
